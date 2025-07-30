@@ -1,0 +1,14 @@
+services:
+  mongo:
+    #mongo image version: explor others versiong => https://hub.docker.com/_/mongo/tags
+    image: mongo:8.0.12
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+    driver: local
